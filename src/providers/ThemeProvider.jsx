@@ -1,12 +1,21 @@
 "use client"
 import { ThemeContext } from '@/context/ThemeContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
-const ThemeProvider = () => {
+const ThemeProvider = ({children}) => {
     const {theme} = useContext(ThemeContext)
-    return (
-        <div className={theme}>ThemeProvider</div>
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if(mounted) {
+        return (
+        <div className={theme}>{children}</div>
     );
+    }
+    
 };
 
 export default ThemeProvider;

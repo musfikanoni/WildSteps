@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  background-color: black;
   padding: 0px 3px;
 }
 
@@ -16,6 +15,4 @@
   height: 15px;
   border-radius: 50%;
   position: absolute;
-  background-color: white;
-  left: 0;
 }
